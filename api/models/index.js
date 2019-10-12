@@ -1,0 +1,2 @@
+require('./predictionModel');
+require('./userModel');
