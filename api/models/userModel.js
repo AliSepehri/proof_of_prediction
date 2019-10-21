@@ -8,10 +8,7 @@ var userSchema = new Schema({
   fullname: String,
   predictions: [{ type: Schema.Types.ObjectId, ref: 'Predictions' }]
 },{
-  timestamps: {
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
-  }
+  timestamps: true
 });
 
 module.exports = mongoose.model('Users', userSchema);

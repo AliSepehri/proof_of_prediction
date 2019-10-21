@@ -7,10 +7,7 @@ var predictionSchema = new Schema({
   hash: String,
   user: { type: Schema.Types.ObjectId, ref: 'Users' }
 },{
-  timestamps: {
-    createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
-  }
+  timestamps: true
 });
 
 module.exports = mongoose.model('Predictions', predictionSchema);
