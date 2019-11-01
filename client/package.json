@@ -1,0 +1,19 @@
+{
+  "name": "proof_of_prediction",
+  "version": "1.0.0",
+  "description": "Proof of Prediction",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Ali Sepehri.Kh",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "next": "^9.1.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}
