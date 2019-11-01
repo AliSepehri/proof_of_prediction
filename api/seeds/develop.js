@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-  models = require('../api/models'),
+  models = require('../app/models'),
   userModel = mongoose.model('Users'),
   predictionModel = mongoose.model('Predictions');
 
