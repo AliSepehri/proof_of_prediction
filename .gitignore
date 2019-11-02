@@ -4,4 +4,6 @@ api/.env
 
 # client
 client/node_modules/
-client/.next
+client/.env
+client/.next/
+

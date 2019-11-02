@@ -1,7 +1,9 @@
+import Layout from "../components/Layout";
+
 const Index = () => {
-  return <div>
+  return <Layout>
     Proof of Prection project
-  </div>
+  </Layout>
 }
 
 export default Index;
