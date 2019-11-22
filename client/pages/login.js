@@ -3,7 +3,7 @@ import request from "../utils/request";
 import Cookies from "js-cookie";
 
 const handleLogin = async ({ values }) => {
-  const res = await request.post("/sessions", {
+  const res = await request().post("/sessions", {
     ...values
   });
   const token = res.data.token;
