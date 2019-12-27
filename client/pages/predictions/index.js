@@ -1,6 +1,6 @@
-import request from "../utils/request";
+import request from "../../utils/request";
 
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 
 const PredictionList = ({ predictions }) => {
   return <Layout>
