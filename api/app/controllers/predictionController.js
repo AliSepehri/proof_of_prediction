@@ -15,14 +15,17 @@ exports.create = function(req, res) {
   const currentUser = req.currentUser;
 
   var newPrediction = new predictionModel(req.body);
-  newPrediction.user = currentUser._id;
+  if (currentUser)
+    newPrediction.user = currentUser._id;
 
   newPrediction.save(function(err, prediction) {
     if (err)
       res.send(err);
-
-    currentUser.predictions.push(prediction);
-    currentUser.save();
+    
+    if (currentUser) {
+      currentUser.predictions.push(prediction);
+      currentUser.save();
+    }
 
     res.json(prediction);
   });

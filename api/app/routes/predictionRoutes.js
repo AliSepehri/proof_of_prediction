@@ -6,11 +6,11 @@ module.exports = function(app) {
   var predictionController = require('../controllers/predictionController');
 
   app.route('/predictions')
-    .get(authMiddleware, predictionController.index)
-    .post(authMiddleware, predictionController.create)
+    .get(predictionController.index)
+    .post(authMiddleware(true), predictionController.create)
   
   app.route('/predictions/:id')
-    .get(authMiddleware, predictionController.show)
-    .put(authMiddleware, predictionController.update)
-    .delete(authMiddleware, predictionController.delete)
+    .get(authMiddleware(), predictionController.show)
+    .put(authMiddleware(), predictionController.update)
+    .delete(authMiddleware(), predictionController.delete)
 };

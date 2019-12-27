@@ -6,7 +6,8 @@ export default (ctx = null) => {
 
   if(ctx && ctx.req){
     const cookie = ctx.req.headers.cookie
-    token = cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    if (token)
+      token = cookie.replace(/(?:(?:^|.*;\s*)token\s*\=\s*([^;]*).*$)|^.*$/, "$1");
   }else{
     token = Cookies.get("token");
   }

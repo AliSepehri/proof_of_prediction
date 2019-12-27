@@ -1,9 +1,23 @@
+import PredictionList from "../components/prediction/List";
+import request from "../utils/request";
+
 import Layout from "../components/Layout";
 
-const Index = () => {
+const HomePage = ({ predictions }) => {
   return <Layout>
-    Proof of Prection project
+    <h1>Home Page</h1>
+    <PredictionList predictions={predictions} />
   </Layout>
-}
+};
 
-export default Index;
+HomePage.getInitialProps = async (ctx) => {
+  const res = await request(ctx).get("/predictions");
+
+  const predictions = res.data;
+
+  return {
+    predictions: predictions
+  }
+};
+
+export default HomePage;
