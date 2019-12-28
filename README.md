@@ -9,7 +9,7 @@ Proof of Prediction
 1. (Done) Create a login form #frontend
 1. (Done) Create new prediction (`/predictions/new`) #frontend
 1. (Done) Root page to show all predictions (`/`) #frontend
-1. Prediction show page (`/predictions/:id`) #frontend
+1. (Done) Prediction show page (`/predictions/:id`) #frontend
 1. Show user's predictions (`/profile`) #frontend
 1. User's setting page (`/profile/setting`) #frontend
 1. Refactor predictionController#create to save relationships

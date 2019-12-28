@@ -10,7 +10,7 @@ module.exports = function(app) {
     .post(authMiddleware(true), predictionController.create)
   
   app.route('/predictions/:id')
-    .get(authMiddleware(), predictionController.show)
+    .get(predictionController.show)
     .put(authMiddleware(), predictionController.update)
     .delete(authMiddleware(), predictionController.delete)
 };

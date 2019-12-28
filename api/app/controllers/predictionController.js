@@ -11,6 +11,16 @@ exports.index = function(req, res) {
   });
 };
 
+exports.show = function(req, res) {
+  const id = req.params.id;
+
+  predictionModel.findOne({_id: id}, function(err, prediction) {
+    if (err)
+      res.send(err);
+    res.json(prediction);
+  });
+};
+
 exports.create = function(req, res) {
   const currentUser = req.currentUser;
 
@@ -31,6 +41,5 @@ exports.create = function(req, res) {
   });
 };
 
-exports.show = function(req, res) {};
 exports.update = function(req, res) {};
 exports.delete = function(req, res) {};

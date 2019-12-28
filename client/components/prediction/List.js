@@ -1,7 +1,11 @@
+import PredictionItem from "./Item";
+
 const PredictionList = ({ predictions }) => {
   return <div>
     { predictions.map(prediction => (
-      <div>{prediction.hash}</div>
+      <div>
+        <a href={`/predictions/${prediction._id}`}>{prediction.hash}</a>
+      </div>
     ))}
   </div>
 };
