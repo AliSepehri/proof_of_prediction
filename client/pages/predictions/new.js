@@ -37,6 +37,7 @@ const PredictionNew = ({ }) => {
       <div>
         <button onClick={() => handleCreate(formState.values)}>Create</button>
       </div>
+      <div><a href="/">Back</a></div>
     </div>
   </Layout>
 };

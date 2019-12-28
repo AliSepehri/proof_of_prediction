@@ -7,6 +7,7 @@ import Layout from "../../components/Layout";
 const SinglePrediction = ({ prediction }) => {
   return <Layout>
     <PredictionItem prediction={prediction} />
+    <div><a href="/">Back</a></div>
   </Layout>
 };
 
