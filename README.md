@@ -11,6 +11,10 @@ Proof of Prediction
 1. (Done) Root page to show all predictions (`/`) #frontend
 1. (Done) Prediction show page (`/predictions/:id`) #frontend
 1. (Done) Generate hash of prediction text #frontend
+1. (Done) Define/Compile/Deploy a sample smart-contract
+1. (Done) Connect to Ethereum network and call smart-contract methods
+1. (In Progress) Define `Proofs` smart-contract
+1. (In Progress) Store transaction ID next to the related prediction record
 1. Show user's predictions (`/profile`) #frontend
 1. User's setting page (`/profile/setting`) #frontend
 1. Refactor predictionController#create to save relationships
