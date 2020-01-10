@@ -5,6 +5,8 @@ api/.env
 api/chaindata/*
 !api/chaindata/.keep
 
+api/truffle/build/
+
 # client
 client/node_modules/
 client/.env
