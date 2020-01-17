@@ -5,7 +5,12 @@ const PredictionHashJson  = require("../../../../truffle/build/contracts/Predict
 const PredictionHash = contract(PredictionHashJson);
 PredictionHash.setProvider(connection._provider);
 
-let result = {};
-PredictionHash.deployed().then(_instance => { result.instance = _instance });
+let instance;
+PredictionHash.deployed().then(_instance => { instance = _instance });
 
-module.exports = result;
+exports.create = function(predictionHash) {
+  return instance.create(
+    predictionHash,
+    { from: process.env.ETHEREUM_APP_ACCOUNT_ID }
+  )
+}

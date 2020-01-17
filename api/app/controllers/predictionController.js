@@ -31,13 +31,11 @@ exports.create = function(req, res) {
   newPrediction.save(function(err, prediction) {
     if (err) res.send(err);
 
-    predictionHashContract.instance.create(
-      prediction.hash,
-      { from: "0x0223e2b58030Cb7c66AD2867d43160FAdAE3D510" }
-    ).then((block) => {
-      prediction.transactionId = block.tx;
-      prediction.save();
-    });
+    predictionHashContract.create(prediction.hash)
+      .then((block) => {
+        prediction.transactionId = block.tx;
+        prediction.save();
+      });
 
     res.json(prediction);
   });
