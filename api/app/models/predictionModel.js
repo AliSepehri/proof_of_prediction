@@ -5,6 +5,7 @@ var Schema = mongoose.Schema;
 
 var predictionSchema = new Schema({
   hash: String,
+  transactionId: String,
   user: { type: Schema.Types.ObjectId, ref: 'Users' }
 },{
   timestamps: true

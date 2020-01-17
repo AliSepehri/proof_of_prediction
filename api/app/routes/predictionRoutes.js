@@ -11,6 +11,5 @@ module.exports = function(app) {
   
   app.route('/predictions/:id')
     .get(predictionController.show)
-    .put(authMiddleware(), predictionController.update)
     .delete(authMiddleware(), predictionController.delete)
 };

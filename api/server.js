@@ -5,6 +5,9 @@ var express = require('express'),
   mongoose = require('mongoose'),
   models = require('./app/models'),
   bodyParser = require('body-parser');
+  predictionHashContract = require('./app/services/ethereum/contracts/predictionHash');
+
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect('mongodb://localhost/proofOfPrediction_db');
