@@ -4,15 +4,19 @@
   "description": "Proof of Prediction",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha tests/",
     "start": "nodemon server.js",
     "ganache": "ganache-cli -m 'grass whip zero open purse liar arrive camp mosquito claw tool actress' --db chaindata"
   },
   "author": "Ali Sepehri.Kh",
   "license": "ISC",
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "ganache-cli": "^6.7.0",
+    "mocha": "^7.0.0",
     "nodemon": "^1.19.3",
+    "sinon": "^8.1.1",
     "truffle": "^5.1.6"
   },
   "dependencies": {

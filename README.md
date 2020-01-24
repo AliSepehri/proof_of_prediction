@@ -32,6 +32,10 @@ Proof of Prediction
 1. (Done) Connect to Ethereum network and call smart-contract methods
 1. (Done) Define `PredictionHash` smart-contract
 1. (Done) Store transaction ID next to the related prediction record
+1. (In Progress) Configure `test` libraries
+1. (Todo) Configure `test` environments
+1. (Todo) Isolate each test case (by removing database)
+1. Configure Babel for importing path (use unified path in everywhere)
 1. Add ownership to smart-contract to prevent creating hash by everyone in network
 1. Dockerize the frontend and the backend application
 1. Show user's predictions (`/profile`) #frontend
