@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "prod": "next start",
+    "build": "next build"
   },
   "author": "Ali Sepehri.Kh",
   "license": "ISC",

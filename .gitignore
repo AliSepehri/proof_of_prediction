@@ -1,6 +1,7 @@
 # api
 api/node_modules/
-api/.env
+api/.env.*
+!api/.env.sample
 
 api/chaindata/*
 !api/chaindata/.keep
