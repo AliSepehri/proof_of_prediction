@@ -34,10 +34,12 @@ exports.create = function(req, res) {
     predictionHashContract.create(prediction.hash)
       .then((block) => {
         prediction.transactionId = block.tx;
-        prediction.save();
+        prediction.save(function(){
+          res.json(prediction);
+        });
+      }).catch((err) => {
+        res.json({error: 'Something went wrong!'});
       });
-
-    res.json(prediction);
   });
 };
 
