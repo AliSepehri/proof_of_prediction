@@ -1,5 +1,7 @@
+require('../test_helper');
+
 const chai = require('chai');
-const chaiHttp = require('chai-http')
+const chaiHttp = require('chai-http');
 const expect = chai.expect;
 // const sinon = require('sinon');
 
