@@ -17,13 +17,16 @@ exports.show = function(req, res) {
 
   predictionModel.findOne({_id: id}, function(err, prediction) {
     if (err)
-      res.send(err);
+      res.status(404).send(err);
     res.json(prediction);
   });
 };
 
 exports.create = function(req, res) {
   const currentUser = req.currentUser;
+  const { hash } = req.body;
+
+  if(!hash) res.status(422).send({ hash: 'is required.' })
 
   var newPrediction = new predictionModel(req.body);
   if (currentUser) newPrediction.user = currentUser._id;
