@@ -3,6 +3,9 @@ import { useFormState } from "react-use-form-state";
 import sha256 from "sha256";
 
 import Layout from "../../components/Layout";
+import styles from "./new.module.css"
+import BlueButton from "../../components/BlueButton";
+import WhiteButton from "../../components/WhiteButton";
 
 const handleCreate = async values => {
   const res = await request().post("/predictions", {
@@ -24,20 +27,23 @@ const PredictionNew = ({ }) => {
 
   return <Layout>
     <div>
-      <div>
-        <label for="body" style={formControlStyles}> Your Prediction: </label>
-        <textarea {...input.textarea("body")} require />
+      <div className={styles["text-area"]}>
+      <div className={styles["text-area-lable"]}>
+        <label for="body" > Your Prediction: </label>
+        </div>
+        <textarea placeholder="enter your prediction here..."  {...input.textarea("body")} />
       </div>
 
-      <div>
-        <label for="hash" style={formControlStyles}>Computed Hash: </label>
+      <div className={styles["show-hash"]}>
+        <label for="hash" >Computed Hash: </label>
         <span>{values.hash}</span>
       </div>
-
-      <div>
-        <button onClick={() => handleCreate(formState.values)}>Create</button>
+      <div className={styles["show-hash-sec-btn"]}>
+      <div className={styles["create-btn"]}>
+        <BlueButton name="Create" link="#" onClick={() => handleCreate(formState.values)}></BlueButton>
       </div>
-      <div><a href="/">Back</a></div>
+      <div className={styles["back-btn"]}><WhiteButton name="Back" link="/"></WhiteButton></div>
+    </div>
     </div>
   </Layout>
 };

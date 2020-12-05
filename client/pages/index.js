@@ -1,15 +1,14 @@
 import PredictionList from "../components/prediction/List";
 import request from "../utils/request";
-
+import BlueButton from "../components/BlueButton";
 import Layout from "../components/Layout";
+import styles from "./index.module.css"
 
 const HomePage = ({ predictions }) => {
   return <Layout>
-    <h1>Home Page</h1>
-
-    <a href="/predictions/new">New Prediction</a>
-
-    <p>Last Predictions:</p>
+    <div className={styles["new-prediction-btn-position"]}><BlueButton name="New Prediction" link="/predictions/new" /></div>
+    <div className={styles["section-title"]}>Popular Predictions</div>
+    
     <PredictionList predictions={predictions} />
   </Layout>
 };

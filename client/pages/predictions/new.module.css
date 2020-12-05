@@ -1,0 +1,48 @@
+.text-area-lable
+{
+  display: block;
+  margin-left: 15%;
+  margin-bottom: 10px;
+}
+
+.text-area
+{
+  margin-top: 80px;
+}
+
+.show-hash span
+{
+  margin-left: 15%;
+  width: 70%;
+  border: 1px solid #cccccc;
+  display: inline-block;
+}
+
+.show-hash
+{
+  margin-top: 20px;
+}
+
+.show-hash label
+{
+  display: block;
+  margin-left: 15%;
+  margin-bottom: 10px;
+}
+
+.create-btn
+{
+  display: inline-block;
+}
+
+.back-btn
+{
+  display: inline-block;
+}
+
+.show-hash-sec-btn
+{
+  /* margin: 10px,0px,0px,15%; */
+  margin-top: 10px;
+  margin-left: 15%;
+}

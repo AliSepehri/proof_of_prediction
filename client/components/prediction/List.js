@@ -1,10 +1,10 @@
-import PredictionItem from "./Item";
+import Section from "../Section";
 
 const PredictionList = ({ predictions }) => {
   return <div>
     { predictions.map(prediction => (
       <div>
-        <a href={`/predictions/${prediction._id}`}>{prediction.hash}</a>
+        <Section content={prediction.hash} predictionId={prediction._id} createdAt={prediction.createdAt} />
       </div>
     ))}
   </div>

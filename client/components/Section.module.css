@@ -1,0 +1,59 @@
+.section
+{
+  background-color:#ffffff ;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  padding: 0 12px;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.section:hover
+{
+  border: 1px solid #898989;
+}
+
+.date-time
+{
+  color: #ccc;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  height: 15px;
+  margin-top: 5px;
+}
+
+.section-btn-share
+{
+  align-items: center;
+  display: inline-block;
+  line-height: 1;
+  vertical-align: middle;
+  border-radius: 2px;
+  padding: 4px;
+  color: #878a8c;
+  font-size: 15px;
+}
+
+.section-btn-share a
+{
+  text-decoration: none;
+}
+
+.section-btn-share a:visited 
+{
+  color:#878a8c ;
+}
+
+.section-btn-share a:hover 
+{
+  color:#424446;
+}
+
+.section-btn-share .share-icon
+{
+  padding-right: 4px;
+}
