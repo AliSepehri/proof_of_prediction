@@ -4,8 +4,7 @@ import sha256 from "sha256";
 
 import Layout from "../../components/Layout";
 import styles from "./new.module.css"
-import BlueButton from "../../components/BlueButton";
-import WhiteButton from "../../components/WhiteButton";
+import Button from "../../components/Button";
 
 const handleCreate = async values => {
   const res = await request().post("/predictions", {
@@ -40,9 +39,11 @@ const PredictionNew = ({ }) => {
       </div>
       <div className={styles["show-hash-sec-btn"]}>
       <div className={styles["create-btn"]}>
-        <BlueButton name="Create" link="#" onClick={() => handleCreate(formState.values)}></BlueButton>
+        <Button name="Create" link="#" color="blue" onClick={() => handleCreate(formState.values)}></Button>
       </div>
-      <div className={styles["back-btn"]}><WhiteButton name="Back" link="/"></WhiteButton></div>
+      <div className={styles["back-btn"]}>
+        <Button name="Back" link="/" color="white"></Button>
+      </div>
     </div>
     </div>
   </Layout>

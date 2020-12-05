@@ -1,6 +1,5 @@
 import styles from "./Header.module.css"
-import BlueButton from "./BlueButton";
-import WhiteButton from "./WhiteButton"
+import Button from "./Button";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
@@ -16,8 +15,8 @@ const Header = () => {
           <FontAwesomeIcon icon={faUser}/>
         </div>
         <div className={styles["login-signup"]}>
-          <WhiteButton name="Log In" link="/login" />
-          <BlueButton name="Sign Up" link="/sign-up"/>
+          <Button name="Log In" link="/login" color="white" />
+          <Button name="Sign Up" link="/sign-up" color="blue" />
         </div>
       </div>
     </header>
