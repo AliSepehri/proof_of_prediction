@@ -1,4 +1,5 @@
 require('dotenv').config();
+var cors = require('cors')
 var express = require('express'),
   app = express(),
   mongoose = require('mongoose'),
@@ -7,6 +8,9 @@ var express = require('express'),
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASE_CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true });
+
+// TODO: Not proper config for production
+app.use(cors())
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
