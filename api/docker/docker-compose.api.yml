@@ -1,0 +1,23 @@
+version: '3'
+services:
+  api:
+    image: registry.proofication.com/api:development
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    container_name: api
+    networks:
+      - backend
+    entrypoint:
+      - "/var/www/app/docker/entrypoints/start.sh"
+    env_file:
+      - ../.env.development
+    environment:
+      ETHEREUM_NETWORK: http://ganache:8545
+      DATABASE_CONNECTION_STRING: mongodb://mongo/proofOfPrediction_db
+    ports:
+      - "4000:4000"
+
+networks:
+  backend:
+    external: true
