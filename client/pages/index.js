@@ -6,8 +6,10 @@ import styles from "./index.module.css"
 
 const HomePage = ({ predictions }) => {
   return <Layout>
-    <div className={styles["new-prediction-btn-position"]}><Button name="New Prediction" link="/predictions/new" color="blue" /></div>
-    <div className={styles["section-title"]}>Popular Predictions</div>
+    <div className={styles["predictions-header"]}>
+      <div className={styles["new-prediction-btn-position"]}><Button name="New Prediction" link="/predictions/new" color="blue" /></div>
+      <div className={styles["section-title"]}></div>
+    </div>
     
     <PredictionList predictions={predictions} />
   </Layout>

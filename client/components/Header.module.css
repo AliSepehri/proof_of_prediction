@@ -17,7 +17,6 @@
 .lable-and-logo
 {
   display: inline-block;
-  width: 200px;
   height: 48px;
   margin-top: -15px;
 }
@@ -36,6 +35,10 @@
   height: 48px;
   font-size: 25px;
   padding: 13px 0px 13px 8px;
+}
+
+.header-lable-tail {
+  font-size: 0.7em;
 }
 
 .login-signup

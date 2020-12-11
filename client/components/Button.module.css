@@ -14,7 +14,7 @@
   padding: 3px 16px;
   margin: 0 5px 0 0;
   display: inline-block;
-  width: 120px;
+  min-width: 120px;
 }
 
 .blue-btn{

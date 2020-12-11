@@ -5,7 +5,7 @@ import NavBar from "./NavBar";
 const Layout = (props) => {
   return <div>
     <Header />
-    <div class={styles["layout-position"]}>
+    <div className={styles["layout-position"]}>
     {props.children}
     </div>
     {/* <NavBar /> */}

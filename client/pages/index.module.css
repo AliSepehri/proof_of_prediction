@@ -1,9 +1,11 @@
+.predictions-header {
+  height: 45px;
+}
+
 .new-prediction-btn-position
 {
-  /* margin-left: 15%;
-  margin-top: -15px;
-  margin-bottom: 10px; */
-  margin: -15px 0px 10px 15%;
+  right: 15%;
+  position: absolute;
 }
 
 .section-title
@@ -11,5 +13,4 @@
   padding-bottom: 10px;
   padding-top: 10px;
   margin-left: 15%;
-  /* margin-top: 50px; */
 }
