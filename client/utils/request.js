@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-export default (ctx = null) => {
+const Request = (ctx = null) => {
   let token;
   let baseURL;
 
@@ -21,3 +21,5 @@ export default (ctx = null) => {
 
   return request;
 };
+
+export default Request;
