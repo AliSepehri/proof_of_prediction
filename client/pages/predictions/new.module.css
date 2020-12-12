@@ -1,7 +1,6 @@
 .text-area-lable
 {
   display: block;
-  margin-left: 15%;
   margin-bottom: 10px;
 }
 
@@ -12,8 +11,7 @@
 
 .show-hash span
 {
-  margin-left: 15%;
-  width: 70%;
+  width: 100%;
   border: 1px solid #cccccc;
   display: inline-block;
 }
@@ -26,7 +24,6 @@
 .show-hash label
 {
   display: block;
-  margin-left: 15%;
   margin-bottom: 10px;
 }
 
@@ -44,5 +41,4 @@
 {
   /* margin: 10px,0px,0px,15%; */
   margin-top: 10px;
-  margin-left: 15%;
 }

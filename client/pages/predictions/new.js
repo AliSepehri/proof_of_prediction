@@ -10,7 +10,9 @@ const handleCreate = async values => {
   const res = await request().post("/predictions", {
     ...values
   })
-  .then(() => window.location="/predictions");
+  .then(({data: prediction}) => {
+    window.location=`/predictions/${prediction._id}`
+  });
 }
 
 const PredictionNew = ({ }) => {
@@ -27,8 +29,8 @@ const PredictionNew = ({ }) => {
   return <Layout>
     <div>
       <div className={styles["text-area"]}>
-      <div className={styles["text-area-lable"]}>
-        <label for="body" > Your Prediction: </label>
+        <div className={styles["text-area-lable"]}>
+          <label for="body" > Your Prediction: </label>
         </div>
         <textarea placeholder="enter your prediction here..."  {...input.textarea("body")} />
       </div>
@@ -38,13 +40,13 @@ const PredictionNew = ({ }) => {
         <span>{values.hash}</span>
       </div>
       <div className={styles["show-hash-sec-btn"]}>
-      <div className={styles["create-btn"]}>
-        <Button name="Create" link="#" color="blue" onClick={() => handleCreate(formState.values)}></Button>
+        <div className={styles["create-btn"]}>
+          <Button name="Create" link="#" color="blue" onClick={() => handleCreate(formState.values)}></Button>
+        </div>
+        <div className={styles["back-btn"]}>
+          <Button name="Back" link="/" color="white"></Button>
+        </div>
       </div>
-      <div className={styles["back-btn"]}>
-        <Button name="Back" link="/" color="white"></Button>
-      </div>
-    </div>
     </div>
   </Layout>
 };
