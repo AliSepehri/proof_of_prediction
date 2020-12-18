@@ -1,0 +1,8 @@
+version: '3'
+services:
+  client:
+    image: registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG
+    entrypoint:
+      - "/var/www/app/docker/entrypoints/start.sh"
+    ports:
+      - "3000:3000"

@@ -1,0 +1,14 @@
+version: '3'
+services:
+  api:
+    image: registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
+    entrypoint:
+      - "/var/www/app/docker/entrypoints/start.sh"
+    environment:
+      ETHEREUM_NETWORK: http://ganache:8545
+      DATABASE_CONNECTION_STRING: mongodb://mongo/proofOfPrediction_db
+      ETHEREUM_APP_ACCOUNT_ID: ${ETHEREUM_APP_ACCOUNT_ID}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY}
+      PORT: 4000
+    ports:
+      - "4000:4000"
