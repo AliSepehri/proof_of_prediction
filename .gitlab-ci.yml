@@ -1,0 +1,10 @@
+stages:
+  - build
+
+build_api:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  script:
+    - docker build -t api:$CI_COMMIT_REF_SLUG -f api/docker/Dockerfile api/
