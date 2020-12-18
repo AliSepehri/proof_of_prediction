@@ -45,6 +45,10 @@ deploy_to_production:
   stage: deploy
   services:
     - docker:dind
+  cache:
+    key: deploy_to_production
+    paths:
+      - ~/.docker/machines
   before_script:
     - mkdir -p ~/.ssh
     - echo $PRODUCTION_SSH_PRIVATE_KEY | base64 -d > ~/.ssh/rsa
@@ -63,7 +67,7 @@ deploy_to_production:
         --generic-ssh-user $PRODUCTION_SSH_USER
         --generic-ssh-key ~/.ssh/rsa
         proofiction
-    - docker-machine env proofiction
-    - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
+    # - docker-machine env proofiction
+    # - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
   script:
     - echo "Scripts..."
