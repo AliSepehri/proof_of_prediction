@@ -1,5 +1,6 @@
 stages:
   - build
+  - deploy
 
 build_api:
   image: docker:latest
@@ -8,10 +9,8 @@ build_api:
     - docker:dind
   before_script:
     - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
-    - docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
-        ||
-        docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:development
-        ||
+    - docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG ||
+        docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:development ||
         echo 'Image Not Found!'
   script:
     - docker build
@@ -29,10 +28,8 @@ build_client:
     - docker:dind
   before_script:
     - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
-    - docker pull registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG
-        ||
-        docker pull registry.gitlab.com/alisepehri/proof-of-prediction/client:development
-        ||
+    - docker pull registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG ||
+        docker pull registry.gitlab.com/alisepehri/proof-of-prediction/client:development ||
         echo 'Image Not Found!'
   script:
     - docker build
@@ -42,3 +39,26 @@ build_client:
         -f client/docker/Dockerfile
         client/
     - docker push registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG
+
+deploy_to_production:
+  image: docker:latest
+  stage: deploy
+  services:
+    - docker:dind
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo $PRODUCTION_SSH_PRIVATE_KEY | base64 -d > ~/.ssh/rsa
+    # - echo $PRODUCTION_SSH_KNOWN_HOSTS > ~/.ssh/known_hosts
+    - chmod 600 ~/.ssh/rsa
+    - eval $(ssh-agent -s)
+    - ssh-add ~/.ssh/rsa
+    - docker-machine create
+        --driver generic
+        --generic-ip-address=$PRODUCTION_IP_ADDRESS
+        --generic-ssh-user $PRODUCTION_SSH_USER
+        --generic-ssh-key ~/.ssh/rsa
+        proofiction
+    - eval $(docker-machine env proofiction)
+    - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
+  script:
+    - echo "Scripts..."
