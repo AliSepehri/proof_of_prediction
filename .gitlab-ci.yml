@@ -11,3 +11,14 @@ build_api:
   script:
     - docker build -t registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG -f api/docker/Dockerfile api/
     - docker push registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
+
+build_client:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
+  script:
+    - docker build -t registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG -f client/docker/Dockerfile client/
+    - docker push registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG
