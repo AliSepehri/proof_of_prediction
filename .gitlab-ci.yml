@@ -6,5 +6,8 @@ build_api:
   stage: build
   services:
     - docker:dind
+  before_script:
+    - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
   script:
-    - docker build -t api:$CI_COMMIT_REF_SLUG -f api/docker/Dockerfile api/
+    - docker build -t registry.gitlab.com/api:$CI_COMMIT_REF_SLUG -f api/docker/Dockerfile api/
+    - docker push registry.gitlab.com/api:$CI_COMMIT_REF_SLUG
