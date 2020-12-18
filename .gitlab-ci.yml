@@ -48,7 +48,7 @@ deploy_to_production:
   cache:
     key: deploy_to_production
     paths:
-      - ~/.docker/machines
+      - ~/.docker/machine/
   before_script:
     - mkdir -p ~/.ssh
     - echo $PRODUCTION_SSH_PRIVATE_KEY | base64 -d > ~/.ssh/rsa
