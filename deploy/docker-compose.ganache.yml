@@ -1,0 +1,13 @@
+version: '3'
+services:
+  ganache:
+    image: trufflesuite/ganache-cli:latest
+    volumes:
+      - chaindata:/var/www/app/chaindata
+    command: --networkId 3 -m 'grass whip zero open purse liar arrive camp mosquito claw tool actress' --db chaindata
+    ports:
+      - "8545:8545"
+
+
+volumes:
+  chaindata:

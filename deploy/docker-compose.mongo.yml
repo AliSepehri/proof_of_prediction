@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo:4.2
+    volumes:
+      - data:/etc/mongo:z
+    ports:
+      - "27017:27017"
+
+volumes:
+  data:
