@@ -52,13 +52,18 @@ deploy_to_production:
     - chmod 600 ~/.ssh/rsa
     - eval $(ssh-agent -s)
     - ssh-add ~/.ssh/rsa
+    - apk --no-cache add curl
+    - base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+        curl -L $base/docker-machine-$(uname -s)-$(uname -m) >/tmp/docker-machine &&
+        mv /tmp/docker-machine /usr/local/bin/docker-machine &&
+        chmod +x /usr/local/bin/docker-machine
     - docker-machine create
         --driver generic
         --generic-ip-address=$PRODUCTION_IP_ADDRESS
         --generic-ssh-user $PRODUCTION_SSH_USER
         --generic-ssh-key ~/.ssh/rsa
         proofiction
-    - eval $(docker-machine env proofiction)
+    - docker-machine env proofiction
     - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
   script:
     - echo "Scripts..."
