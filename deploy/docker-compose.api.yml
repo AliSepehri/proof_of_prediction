@@ -5,8 +5,8 @@ services:
     entrypoint:
       - "/var/www/app/docker/entrypoints/start.sh"
     environment:
-      ETHEREUM_NETWORK: http://ganache:8545
-      DATABASE_CONNECTION_STRING: mongodb://mongo/proofOfPrediction_db
+      ETHEREUM_NETWORK: http://proofiction_ganache:8545
+      DATABASE_CONNECTION_STRING: mongodb://proofiction_mongo/proofOfPrediction_db
       ETHEREUM_APP_ACCOUNT_ID: ${ETHEREUM_APP_ACCOUNT_ID}
       JWT_SECRET_KEY: ${JWT_SECRET_KEY}
       PORT: 4000
