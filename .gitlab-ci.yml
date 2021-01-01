@@ -2,24 +2,24 @@ stages:
   - build
   - deploy
 
-# build_api:
-#   image: docker:latest
-#   stage: build
-#   services:
-#     - docker:dind
-#   before_script:
-#     - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
-#     - docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG ||
-#         docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:development ||
-#         echo 'Image Not Found!'
-#   script:
-#     - docker build
-#         --cache-from registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
-#         --cache-from registry.gitlab.com/alisepehri/proof-of-prediction/api:development
-#         -t registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
-#         -f api/docker/Dockerfile
-#         api/
-#     - docker push registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
+build_api:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login registry.gitlab.com -u $REGISTRY_USERNAME -p $REGISTRY_PASSWORD
+    - docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG ||
+        docker pull registry.gitlab.com/alisepehri/proof-of-prediction/api:development ||
+        echo 'Image Not Found!'
+  script:
+    - docker build
+        --cache-from registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
+        --cache-from registry.gitlab.com/alisepehri/proof-of-prediction/api:development
+        -t registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
+        -f api/docker/Dockerfile
+        api/
+    - docker push registry.gitlab.com/alisepehri/proof-of-prediction/api:$CI_COMMIT_REF_SLUG
 
 build_client:
   image: docker:latest
