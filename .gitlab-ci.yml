@@ -59,3 +59,4 @@ deploy_to_production:
     - docker stack deploy -c deploy/docker-compose.ganache.yml --with-registry-auth proofiction
     - docker stack deploy -c deploy/docker-compose.api.yml --with-registry-auth proofiction
     - docker stack deploy -c deploy/docker-compose.client.yml --with-registry-auth proofiction
+    - docker stack deploy -c deploy/docker-compose.nginx.yml --with-registry-auth proofiction

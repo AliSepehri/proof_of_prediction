@@ -4,5 +4,7 @@ services:
     image: registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG
     entrypoint:
       - "/var/www/app/docker/entrypoints/start.sh"
+    environment:
+      VIRTUAL_HOST: proofiction.site
     ports:
       - "3000:3000"
