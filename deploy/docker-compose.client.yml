@@ -6,5 +6,6 @@ services:
       - "/var/www/app/docker/entrypoints/start.sh"
     environment:
       VIRTUAL_HOST: proofiction.site
+      LETSENCRYPT_HOST: proofiction.site
     ports:
       - "3000:3000"
