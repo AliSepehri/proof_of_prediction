@@ -10,5 +10,7 @@ services:
       ETHEREUM_APP_ACCOUNT_ID: ${ETHEREUM_APP_ACCOUNT_ID}
       JWT_SECRET_KEY: ${JWT_SECRET_KEY}
       PORT: 4000
+      VIRTUAL_HOST: api.proofiction.site
+      LETSENCRYPT_HOST: api.proofiction.site
     ports:
       - "4000:4000"
