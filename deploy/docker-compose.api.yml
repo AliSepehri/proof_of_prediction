@@ -11,6 +11,7 @@ services:
       JWT_SECRET_KEY: ${JWT_SECRET_KEY}
       PORT: 4000
       VIRTUAL_HOST: api.proofiction.site
+      VIRTUAL_PORT: 4000
       LETSENCRYPT_HOST: api.proofiction.site
     ports:
       - "4000:4000"
