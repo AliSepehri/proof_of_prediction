@@ -3,7 +3,7 @@ services:
   mongodb:
     image: mongo:4.2
     volumes:
-      - data:/etc/mongo:z
+      - data:/data/db:z
     ports:
       - "27017:27017"
 
