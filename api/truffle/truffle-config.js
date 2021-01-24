@@ -1,3 +1,7 @@
+const HDWalletProvider = require("truffle-hdwallet-provider");
+
+const { ETHEREUM_NETWORK, MNEMONIC } = process.env;
+
 /**
  * Use this file to configure your truffle project. It's seeded with some
  * common settings for different networks and features like migrations,
@@ -47,6 +51,13 @@ module.exports = {
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "3",       // Any network (default: none)
     },
+
+    rinkeby: {
+      provider: function() {
+        return new HDWalletProvider(MNEMONIC, ETHEREUM_NETWORK)
+      }, 
+      network_id: "4"
+    }
 
     // Another network with more advanced options...
     // advanced: {

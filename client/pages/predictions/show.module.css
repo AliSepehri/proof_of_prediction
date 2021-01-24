@@ -46,3 +46,7 @@
   margin: 3px 0 0 80px;
   display: inline-block;
 }
+
+.transaction-details {
+  margin-top: 10px;
+}

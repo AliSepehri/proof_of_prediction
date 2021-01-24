@@ -35,12 +35,28 @@ exports.create = function(req, res) {
     if (err) res.send(err);
 
     predictionHashContract.create(prediction.hash)
-      .then((block) => {
-        prediction.transactionId = block.tx;
+      .on('transactionHash', (txHash) => {
+        console.log('TRANSACTION_HASH');
+        console.log(txHash);
+        prediction.transactionId = txHash;
         prediction.save(function(){
           res.json(prediction);
         });
-      }).catch((err) => {
+      })
+      .on('confirmation', (confirmations, receipt) => {
+        console.log('CONFIRMATION');
+        console.log(confirmations);
+        console.log(receipt);
+      })
+      .on('receipt', (receipt) => {
+        console.log('RECEIPT');
+        console.log(receipt);
+      })
+      .on('error', (error, receipt, confirmations) => {
+        console.log('ERROR');
+        console.log(error);
+        console.log(receipt);
+        console.log(confirmations);
         res.json({error: 'Something went wrong!'});
       });
   });

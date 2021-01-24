@@ -35,6 +35,10 @@ const SinglePrediction = ({ prediction }) => {
         </div>
       </div>
 
+      <div className={styles["transaction-details"]}>
+        <a href={`https://rinkeby.etherscan.io/tx/${prediction.transactionId}`}>See Transaction Details (Rinkeby Testnet)</a>
+      </div>
+
       <div className={styles["btn-area"]}>
         <Button name="Back" link="/" color="blue"></Button>
       </div>
