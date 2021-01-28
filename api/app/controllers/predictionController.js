@@ -13,9 +13,9 @@ exports.index = function(req, res) {
 };
 
 exports.show = function(req, res) {
-  const id = req.params.id;
+  const transactionId = req.params.transactionId;
 
-  predictionModel.findOne({_id: id}, function(err, prediction) {
+  predictionModel.findOne({transactionId: transactionId}, function(err, prediction) {
     if (err)
       res.status(404).send(err);
     res.json(prediction);

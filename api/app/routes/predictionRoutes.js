@@ -9,7 +9,7 @@ module.exports = function(app) {
     .get(predictionController.index)
     .post(authMiddleware(true), predictionController.create)
   
-  app.route('/predictions/:id')
+  app.route('/predictions/:transactionId')
     .get(predictionController.show)
     .delete(authMiddleware(), predictionController.delete)
 };

@@ -11,7 +11,7 @@ const handleCreate = async values => {
     ...values
   })
   .then(({data: prediction}) => {
-    window.location=`/predictions/${prediction._id}`
+    window.location=`/predictions/${prediction.transactionId}`
   });
 }
 
