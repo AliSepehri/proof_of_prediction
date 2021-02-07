@@ -3,9 +3,9 @@ services:
   mongodb:
     image: mongo:4.2
     volumes:
-      - data:/data/db:z
+      - mongo-data:/data/db:z
     ports:
       - "27017:27017"
 
 volumes:
-  data:
+  mongo-data:
