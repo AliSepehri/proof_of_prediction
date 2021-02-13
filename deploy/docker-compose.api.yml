@@ -5,7 +5,7 @@ services:
     entrypoint:
       - "/var/www/app/docker/entrypoints/start.sh"
     environment:
-      DATABASE_CONNECTION_STRING: mongodb://mongodb/proofOfPrediction_db
+      DATABASE_CONNECTION_STRING: mongodb://${MONGO_ROOT_USERNAME}:${MONGO_ROOT_PASSWORD}@mongodb/proofOfPrediction_db?authSource=admin
       ETHEREUM_APP_ACCOUNT_ID: ${ETHEREUM_APP_ACCOUNT_ID}
       ETHEREUM_APP_ACCOUNT_PRIVATE_KEY: ${ETHEREUM_APP_ACCOUNT_PRIVATE_KEY}
       ETHEREUM_NETWORK: ${ETHEREUM_NETWORK}
