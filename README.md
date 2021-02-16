@@ -18,6 +18,9 @@ Proof of Prediction
   1. npm run dev
 
 ### To Do List
+1. Implement the functionality of share button #frontend
+1. Don't send body to backend #frontend
+1. Make pages responsible #frontend
 1. Make sure only the owner can create prediction #backend
 1. Sign-up by google account #backend #frontend
 1. Show user's predictions (`/profile`) #frontend
