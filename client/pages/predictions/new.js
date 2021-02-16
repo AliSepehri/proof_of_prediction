@@ -8,7 +8,7 @@ import Button from "../../components/Button";
 
 const handleCreate = async values => {
   const res = await request().post("/predictions", {
-    ...values
+    hash: values.hash
   })
   .then(({data: prediction}) => {
     window.location=`/predictions/${prediction.transactionId}`
