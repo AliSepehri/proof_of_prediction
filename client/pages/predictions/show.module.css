@@ -27,6 +27,13 @@
   margin-bottom: 10px;
 }
 
+.hash {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
 .btn-area
 {
   margin-top: 20px;

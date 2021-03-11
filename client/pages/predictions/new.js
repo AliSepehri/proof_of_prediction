@@ -37,7 +37,7 @@ const PredictionNew = ({ }) => {
 
       <div className={styles["show-hash"]}>
         <label for="hash" >Computed Hash: </label>
-        <span>{values.hash}</span>
+        <span className={styles["hash"]}>{values.hash}</span>
       </div>
       <div className={styles["show-hash-sec-btn"]}>
         <div className={styles["create-btn"]}>

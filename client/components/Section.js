@@ -11,7 +11,7 @@ const Section = (props) => {
   return <section>
     <div className={styles["section"]}>
       <div className={styles["datetime"]}>{formatDatetime(props.createdAt)}</div>
-      <p><a href={`/predictions/${props.transactionId}`}>{props.content}</a></p>
+      <div className={styles["hash"]}><a href={`/predictions/${props.transactionId}`}>{props.content}</a></div>
       <div className={styles["section-btn"]}>
         <div className={styles["section-btn-share"]}><a href="#"><FontAwesomeIcon className={styles["share-icon"]} icon={faShare} />Share</a></div>
 

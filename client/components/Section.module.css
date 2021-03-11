@@ -13,6 +13,12 @@
   border: 1px solid #898989;
 }
 
+.hash {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px 0;
+}
+
 .datetime
 {
   color: #ccc;

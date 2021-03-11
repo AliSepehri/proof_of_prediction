@@ -24,7 +24,7 @@ const SinglePrediction = ({ prediction }) => {
 
       <div className={styles["show-hash"]}>
         <label for="hash" >Hash: </label>
-        <span> {prediction.hash} </span>
+        <span className={styles["hash"]}> {prediction.hash} </span>
       </div>
 
       <div className={styles["confirmation-box"]}>
