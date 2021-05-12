@@ -1,9 +1,27 @@
-version: '3'
+version: '3.7'
 services:
   client:
     image: registry.gitlab.com/alisepehri/proof-of-prediction/client:$CI_COMMIT_REF_SLUG
     entrypoint:
       - "/var/www/app/docker/entrypoints/start.sh"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+    deploy:
+      update_config:
+        order: start-first
+        failure_action: rollback
+        delay: 10s
+      rollback_config:
+        parallelism: 0
+        order: stop-first
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
     environment:
       VIRTUAL_HOST: proofiction.site
       LETSENCRYPT_HOST: proofiction.site
